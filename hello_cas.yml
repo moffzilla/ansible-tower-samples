@@ -12,7 +12,5 @@
       apache2_module: name=rewrite state=present
       notify:
         - restart apache2
-  
-  handlers:
-    - name: restart apache2
+
       
