@@ -1,0 +1,22 @@
+- name: Hello CAS Sample
+  hosts: all
+  tasks:
+    - name: Hello Message
+      debug:
+        msg: "Hello Cloud Automation Services!"
+        
+ - name: Install the packgaes
+  become: true
+  apt:
+      name: "{{ item }}"
+      state: present
+  with_items:
+      - htop
+      - git
+      - curl
+      - unzip
+      - make
+      - ca-certificates
+      - jq
+      - ipcalc
+
