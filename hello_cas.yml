@@ -5,18 +5,18 @@
       debug:
         msg: "Hello Cloud Automation Services!"
         
-- name: Install Software
-  become: 'true'
-  apt:
-      name: "{{ item }}"
-      state: present
-  with_items:
-      - htop
-      - git
-      - curl
-      - unzip
-      - make
-      - ca-certificates
-      - jq
-      - ipcalc
+    - name: Install Software
+      become: 'true'
+      apt:
+          name: "{{ item }}"
+          state: present
+      with_items:
+          - htop
+          - git
+          - curl
+          - unzip
+          - make
+          - ca-certificates
+          - jq
+          - ipcalc
       
