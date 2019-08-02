@@ -4,13 +4,5 @@
     - name: Hello Message
       debug:
         msg: "Hello Cloud Automation Services!"
-        
-    - name: Install Apache
-      raw: sudo apt-get install apache2 -y
-
-    - name: enabled mod_rewrite
-      apache2_module: name=rewrite state=present
-      notify:
-        - restart apache2
 
       
