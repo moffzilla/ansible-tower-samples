@@ -5,18 +5,13 @@
       debug:
         msg: "Hello Cloud Automation Services!"
         
-    - name: Update and upgrade apt packages
-      become: true
-      apt:
-        upgrade: yes
-        update_cache: yes 
-        cache_valid_time: 86400 #One day
-
     - name: Install pip
+      become: "true"
       apt: 
         name=python-pip state=present
       
     - name: install docker-py
+      become: "true"
       pip: 
         name=docker-py
         
