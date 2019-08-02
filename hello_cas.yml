@@ -5,7 +5,7 @@
       debug:
         msg: "Hello Cloud Automation Services!"
         
- - name: Install the packgaes
+- name: Hello CAS Sample
   become: true
   apt:
       name: "{{ item }}"
