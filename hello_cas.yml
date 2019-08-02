@@ -5,9 +5,9 @@
       debug:
         msg: "Hello Cloud Automation Services!"
         
-    - name: Install Software
-      become: 'true'
-      apt:
-          name: ['htop', 'git', 'curl', 'unzip', 'make', 'ca-certificates', 'jq', 'ipcalc']
-          state: present
+    - name: Database
+      docker:
+        name: database
+        image: postgres:9.4
+        state: started
       
