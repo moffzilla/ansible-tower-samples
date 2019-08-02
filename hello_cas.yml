@@ -8,15 +8,6 @@
     - name: Install Software
       become: 'true'
       apt:
-          name: "{{ item }}"
+          name: ['htop', 'git', 'curl', 'unzip', 'make', 'ca-certificates', 'jq', 'ipcalc']
           state: present
-      with_items:
-          - htop
-          - git
-          - curl
-          - unzip
-          - make
-          - ca-certificates
-          - jq
-          - ipcalc
       
