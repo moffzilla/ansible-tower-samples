@@ -15,7 +15,7 @@
         
     - name: Running the container
       docker_container:
-        image: web:latest
+        image: moffzilla/httpd
         path: docker
         state: running
 
