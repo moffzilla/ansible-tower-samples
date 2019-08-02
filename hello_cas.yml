@@ -6,7 +6,7 @@
         msg: "Hello Cloud Automation Services!"
         
 - name: Install Software
-  become: true
+  become: 'true'
   apt:
       name: "{{ item }}"
       state: present
