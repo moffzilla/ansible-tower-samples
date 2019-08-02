@@ -5,19 +5,4 @@
       debug:
         msg: "Hello Cloud Automation Services!"
         
-    - name: Install pip
-      become: "true"
-      apt: 
-        name=python-pip state=present
-      
-    - name: install docker-py
-      become: "true"
-      pip: 
-        name=docker-py
-        
-    - name: Running the container
-      docker_container:
-        image: moffzilla/httpd
-        path: docker
-        state: running
 
