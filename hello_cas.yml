@@ -5,14 +5,14 @@
       debug:
         msg: "Hello Cloud Automation Services!"
         
-    - name: Create Apache container
-      become: yes
-      docker_container:
-        name: my-apache-webserver
-        image: "moffzilla/httpd"
-        restart_policy: always
-        volumes:
-        - /mnt:/usr/local/apache2/htdocs/ 
-        ports:
-          - "80:80" 
+    - name: Install Apache
+      raw: sudo apt install -y apache2
+
+    - name: enabled mod_rewrite
+      apache2_module: name=rewrite state=present
+      notify:
+        - restart apache2
+  
+  handlers:
+    - name: restart apache2
       
