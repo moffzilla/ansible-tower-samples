@@ -5,9 +5,14 @@
       debug:
         msg: "Hello Cloud Automation Services!"
         
-    - name: Database
-      docker:
-        name: database
-        image: postgres:9.4
-        state: started
+    - name: Create Apache container
+      become: yes
+      docker_container:
+        name: my-apache-webserver
+        image: "moffzilla/httpd"
+        restart_policy: always
+        volumes:
+        - /mnt:/usr/local/apache2/htdocs/ 
+        ports:
+          - "80:80" 
       
